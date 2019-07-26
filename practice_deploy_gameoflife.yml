@@ -15,7 +15,7 @@
         artifact_id: gameoflife
         version: 0.0.2
         username: "{{ user }}"
-        password: "{{ pass }}"
+        password: "{{ password }}"
         repository_url: http://3.15.159.140:8081/nexus/content/repositories/releases/
         extension: war
         dest: /root/deployment_directort/gameoflife-0.0.2.war
