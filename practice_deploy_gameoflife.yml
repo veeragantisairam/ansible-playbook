@@ -16,7 +16,7 @@
         version: 0.0.2
         username: "{{ user }}"
         password: "{{ pass }}"
-        repository_url: http://18.216.77.96:8081/nexus/content/repositories/releases/
+        repository_url: http://3.15.159.140:8081/nexus/content/repositories/releases/
         extension: war
         dest: /root/deployment_directort/gameoflife-0.0.2.war
     - name: running application
