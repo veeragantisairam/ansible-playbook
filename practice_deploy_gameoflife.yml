@@ -1,0 +1,25 @@
+---
+- hosts: dev3
+  tasks:
+    - name: installing java
+      yum: 
+        name: java-1.8.0
+        state: latest
+    - name: creating folder
+      file:
+        path: /root/deployment_directort
+        state: directory
+    - name: nexus_artifact download
+      maven_artifact:
+        group_id: be.cegeka
+        artifact_id: gameoflife
+        version: 0.0.2
+        username: admin
+        password: admin123
+        repository_url: http://18.216.77.96:8081/nexus/content/repositories/releases/
+        extension: war
+        dest: /root/deployment_directort/gameoflife-0.0.2.war
+    - name: running application
+      shell: nohup java -jar gameoflife-0.0.2.war &
+      args:
+        chdir: /root/deployment_directort
